@@ -5,7 +5,7 @@
     return;
   }
 
-  const apiUrl = "http://xxxweb.ddns.net:3000/api/check-ab-tests"; // Endpoint da API para verificar o UUID
+  const apiUrl = "https://stracked-front.vercel.app/api/check-ab-tests"; // Endpoint da API para verificar o UUID
 
   async function checkForABTests(apiUrl, websiteUuid) {
     try {
