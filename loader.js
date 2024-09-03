@@ -15,7 +15,7 @@
     return;
   }
 
-  const apiUrl = "https://stracked-front.vercel.app/api/check-ab-tests"; // Endpoint da API para verificar o UUID
+  const apiUrl = "https://stracked-front.vercel.app/api/check-ab-test"; // Endpoint da API para verificar o UUID
 
   async function checkForABTests(apiUrl, strackedId) {
     try {
