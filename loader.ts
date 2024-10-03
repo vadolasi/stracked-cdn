@@ -86,7 +86,7 @@ type Response = {
       }
 
       currentElement = parentElement;
-      foundRoot = parentElement.tagName.toLowerCase() === 'html';
+      foundRoot = parentElement.tagName.toLowerCase() === "html";
       if (foundRoot) selector = `/html${selector}`;
     } while (foundRoot === false);
 
@@ -98,16 +98,11 @@ type Response = {
   if (response) {
     runABTests(response.tests);
 
-    const res = await fetch("https://freeipapi.com/api/json");
-    const { countryCode, regionName } = await res.json() as { countryCode: string, regionName: string };
-
     const queryParams = new URLSearchParams(window.location.search)
 
     const params = new URLSearchParams();
     params.append("token", response.token);
     params.append("path", window.location.pathname + window.location.search);
-    params.append("country", countryCode);
-    params.append("region", regionName);
     params.append("referrer", document.referrer);
 
     if (queryParams.get("utm_source")) params.append("utm_source", queryParams.get("utm_source")!);
