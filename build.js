@@ -21,6 +21,7 @@ async function build() {
     },
   });
 
+  /*
   const minified = await minify(result.outputFiles[0].text, {
     mangle: {
       properties: {
@@ -41,8 +42,9 @@ async function build() {
     toplevel: true,
     module: true,
   });
+  */
 
-  await writeFile("loader.js", minified.code);
+  await writeFile("loader.js", result.outputFiles[0].text);
 }
 
 build();

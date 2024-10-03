@@ -41,7 +41,7 @@ type Response = {
   function runABTests(tests: Response["tests"]) {
     const currentUrl = new URL(window.location.href); // Usar URL para facilitar a manipulação de parâmetros
     const searchParams = currentUrl.search; // Obter os parâmetros da URL atual
-    
+
     tests.forEach((test) => {
       if (currentUrl.href.startsWith(test.entryUrl)) { // Usar startsWith para maior flexibilidade
         const randomIndex = Math.floor(Math.random() * test.variants.length);
@@ -96,7 +96,7 @@ type Response = {
   const response = await checkForABTests(apiUrl, strackedId);
 
   if (response) {
-    runABTests(response.tests);
+    runABTests(response.tests ?? []);
 
     const queryParams = new URLSearchParams(window.location.search)
 
